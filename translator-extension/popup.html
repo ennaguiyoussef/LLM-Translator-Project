@@ -2,34 +2,66 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Darija Side Panel</title>
+    <title>Translator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- UI calquée sur translator-client/interface.html -->
 <div class="container">
     <div class="header">
-        <h1>Darija AI 🇲🇦</h1>
-        <span>VERSION EXPERT</span>
+        <div class="header-content">
+            <h1>Translator</h1>
+            <p class="tagline">Traduction instantanée via IA</p>
+        </div>
+        <span class="badge">Extension</span>
     </div>
 
-    <div class="card">
-        <label for="inputText" class="label-title">🇬🇧 English Input</label>
-        <textarea id="inputText" placeholder="Sélectionnez du texte sur une page web..."></textarea>
+    <div class="main-card">
+        <div class="input-section">
+            <label for="sourceText" class="section-label">Texte à traduire</label>
+            <div class="textarea-wrapper">
+                <textarea
+                        id="sourceText"
+                        placeholder="Sélectionnez du texte sur une page web... (Ctrl+Entrée pour traduire)"
+                        spellcheck="true"></textarea>
+                <div class="char-count">
+                    <span id="charCount">0</span>/500
+                </div>
+            </div>
+        </div>
+
+        <div id="errorZone" class="error-box hidden">
+            <span class="error-icon">⚠️</span>
+            <span id="errorText"></span>
+        </div>
+
+        <button id="btnTranslate" class="translate-btn">
+            <span id="btnText">Traduire</span>
+            <div id="spinner" class="spinner hidden"></div>
+        </button>
+
+        <div class="output-section">
+            <label for="targetText" class="section-label">Traduction</label>
+            <div class="output-container">
+                <div class="output-wrapper">
+                    <p id="targetText" class="output-text placeholder">La réponse s'affichera ici...</p>
+                </div>
+                <button id="btnCopy" class="copy-btn hidden" title="Copier">
+                    <span id="copyText">📋 Copier</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="historySection" class="history-section hidden">
+            <div class="history-header">
+                <h3>📋 Historique</h3>
+                <button id="btnClearHistory" class="clear-btn">Effacer</button>
+            </div>
+            <div id="historyList" class="history-list"></div>
+        </div>
     </div>
-
-    <button id="translateBtn">Traduire maintenant</button>
-
-    <div id="outputArea" class="card hidden">
-        <div class="label-title" style="text-align: right;">Traduction 🇲🇦</div>
-        <p id="resultText"></p>
-    </div>
-
-    <div id="loader" class="hidden">
-        ⏳ Traduction en cours...
-    </div>
-
-    <div id="error" class="card hidden" style="background: #fee2e2; color: #991b1b; font-size: 0.8rem;"></div>
 </div>
+
 <script src="popup.js"></script>
 </body>
 </html>
