@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="header">
+        <div class="header-content">
+            <h1>✨ Translator</h1>
+            <p class="tagline">Traduction instantanée via IA</p>
+        </div>
+        <span class="badge">API Active</span>
+    </div>
+
+    <div class="main-card">
+        <div class="input-section">
+            <label for="sourceText" class="section-label">Texte à traduire</label>
+            <div class="textarea-wrapper">
+                <textarea
+                    id="sourceText"
+                    placeholder="Entrez votre texte ici... (Ctrl+Entrée pour traduire)"
+                    spellcheck="true"></textarea>
+                <div class="char-count">
+                    <span id="charCount">0</span>/500
+                </div>
+            </div>
+        </div>
+
+        <div id="errorZone" class="error-box hidden">
+            <span class="error-icon">⚠️</span>
+            <span id="errorText"></span>
+        </div>
+
+        <button id="btnTranslate" class="translate-btn">
+            <span id="btnText">Traduire</span>
+            <div id="spinner" class="spinner hidden"></div>
+        </button>
+
+        <div class="output-section">
+            <label for="targetText" class="section-label">Traduction</label>
+            <div class="output-container">
+                <div class="output-wrapper">
+                    <p id="targetText" class="output-text">La réponse s'affichera ici...</p>
+                </div>
+                <button id="btnCopy" class="copy-btn hidden" title="Copier">
+                    <span id="copyText">📋 Copier</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="historySection" class="history-section hidden">
+            <div class="history-header">
+                <h3>📋 Historique</h3>
+                <button id="btnClearHistory" class="clear-btn">Effacer</button>
+            </div>
+            <div id="historyList" class="history-list"></div>
+        </div>
+    </div>
+</div>

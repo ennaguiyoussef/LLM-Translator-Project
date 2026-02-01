@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Rubik:wght@400;500&display=swap');
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --text-dark: #2d3748;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    background-image:
+            radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%),
+            radial-gradient(at 50% 100%, hsla(225,39%,30%,1) 0, transparent 50%);
+    color: var(--text-dark);
+
+    min-width: 350px;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header {
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+}
+
+.header span {
+    font-size: 0.75rem;
+    color: #a5b4fc;
+    letter-spacing: 1px;
+}
+
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.label-title {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    min-height: 100px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 8px;
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    border-color: #667eea;
+}
+
+#translateBtn {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#translateBtn:hover {
+    transform: scale(1.02);
+}
+
+#outputArea {
+    border-left: 4px solid #667eea;
+    background: #f8fafc;
+}
+
+#resultText {
+    text-align: right;
+    direction: rtl;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+#loader {
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.hidden { display: none !important; }

@@ -1,0 +1,8 @@
+
+
+###
+POST http://localhost:8080/api/translator/translate
+Content-Type: text/plain
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+Hello, how are you?
