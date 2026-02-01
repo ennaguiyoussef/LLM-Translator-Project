@@ -8,3 +8,4 @@
 /dataSources.local.xml
 # Sécurité (si un .env se retrouve sous .idea par erreur)
 .env
+*.properties
